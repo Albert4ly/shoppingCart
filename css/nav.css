@@ -1,0 +1,15 @@
+.navBar {
+   height: 10vh;
+   width: 100%;
+   padding-right: 4%;
+   background-color: rgba(0, 255, 255, 0.518);
+   display: flex;
+   justify-content: right;
+   align-items: center;
+   position: fixed;
+}
+
+.navBar__shoppingCartBtn {
+  width: 3%;
+  height: 60%;
+}
