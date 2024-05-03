@@ -1,0 +1,8 @@
+.shoppingCartSection {
+   height: 90vh;
+   width: 20%;
+   order: 3;
+   margin-top: 4%;
+   background-color: rgba(0, 255, 255, 0.518);
+   display: none;
+}
