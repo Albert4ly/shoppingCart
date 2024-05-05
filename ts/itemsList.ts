@@ -24,14 +24,14 @@ const items = [
       title: 'hoodieAdidas',
       descrition: 'descrition product number three',
       price: 180,
-      category: 'hoodie',
+      category: 'hoodies',
       nrItem: 1114,
    },
    {
       title: 'hoodieNintendo',
       descrition: 'descrition product number three',
       price: 200,
-      category: 'hoodie',
+      category: 'hoodies',
       nrItem: 1115,
    },
 ];

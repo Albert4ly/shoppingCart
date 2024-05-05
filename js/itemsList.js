@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.items = void 0;
-var items = [
+const items = [
     {
         title: 'tshirtNike',
         descrition: 'descrition product number one',
@@ -27,15 +24,15 @@ var items = [
         title: 'hoodieAdidas',
         descrition: 'descrition product number three',
         price: 180,
-        category: 'hoodie',
+        category: 'hoodies',
         nrItem: 1114,
     },
     {
         title: 'hoodieNintendo',
         descrition: 'descrition product number three',
         price: 200,
-        category: 'hoodie',
+        category: 'hoodies',
         nrItem: 1115,
     },
 ];
-exports.items = items;
+export { items };
