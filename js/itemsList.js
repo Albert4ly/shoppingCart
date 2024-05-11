@@ -31,7 +31,7 @@ const items = [
         title: 'hoodieNintendo',
         descrition: 'descrition product number three',
         price: 200,
-        category: 'hoodies',
+        category: 'hoodie',
         nrItem: 1115,
     },
 ];
