@@ -2,7 +2,7 @@ import { items } from "./itemsList.js";
 const categoryBtn = document.querySelector(".category");
 const itemsCnt = document.querySelector(".itemsCnt");
 export class CreateItems {
-    constructor(itemsReturn) {
+    constructor() {
         this.itemsReturn = [];
         this.listenerFunc();
     }

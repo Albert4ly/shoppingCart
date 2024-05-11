@@ -7,7 +7,7 @@ export class CreateItems {
 
 	public itemsReturn: Object[];
 	
-	constructor(itemsReturn: []) {
+	constructor() {
 		this.itemsReturn = [];
   
 		this.listenerFunc();
