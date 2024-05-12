@@ -1,2 +1,4 @@
 import { CreateItems } from "./createItems.js";
-const j = new CreateItems();
+import { LocalStorage } from "./localStorage.js";
+new CreateItems();
+new LocalStorage();

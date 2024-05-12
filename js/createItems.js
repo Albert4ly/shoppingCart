@@ -28,6 +28,7 @@ export class CreateItems {
                 const addToCartBtn = document.createElement("button");
                 h2.textContent = el.title;
                 pCategory.textContent = el.category;
+                addToCartBtn.setAttribute("value", el.nrItem);
                 articleEl.classList.add("itemsCnt__item");
                 h2.classList.add("itemsCnt__itemTitle");
                 p.classList.add("itemsCnt__itemDescrition");
