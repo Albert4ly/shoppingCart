@@ -19,6 +19,7 @@ export class CreateItems {
     createCardElementsForItems() {
         if (this.itemsReturn.length !== 0) {
             this.itemsReturn.forEach((el) => {
+                k;
                 const articleEl = document.createElement("article");
                 const h2 = document.createElement("h2");
                 const p = document.createElement("p");

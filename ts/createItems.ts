@@ -32,7 +32,7 @@ export class CreateItems {
 	createCardElementsForItems() {
 		if (this.itemsReturn.length !== 0) {
 
-			this.itemsReturn.forEach((el:any) => {
+			this.itemsReturn.forEach((el:any) => {k
 				
 				
 
