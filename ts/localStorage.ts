@@ -1,34 +1,34 @@
-import { items } from "./itemsList.js";
+// import { items } from "./itemsList.js";
 import { Storages } from "./storages.js";
 
-const itemsCnt = document.querySelector(".itemsCnt");
-const shoppingCartSection = document.querySelector(".shoppingCartSection");
+// const itemsCnt = document.querySelector(".itemsCnt");
+// const shoppingCartSection = document.querySelector(".shoppingCartSection");
 
 export class LocalStorage<T> extends Storages<T> {
 
-   public intoCartItems: Object[];
+   // public intoCartItems: Object[];
 
    public constructor(storageKey: string) {
       super(storageKey);
 
-      this.intoCartItems = [];
+      // this.intoCartItems = [];
 
-      // this.setItems();
       this.getItems();
-      this.listenerFunc();
+      // this.listenerFunc();
    }
 
-   listenerFunc() {
-      itemsCnt?.addEventListener('click', (e) => { this.setItems(e) });
-   } 
+   // listenerFunc() {
+   //    itemsCnt?.addEventListener('click', (e) => { this.setItems(e) });
+   // } 
 
-   public setItems(e: any): void {
-      items.forEach((el) => {
-         if (Number(e.target.value) === el.nrItem) {
-            this.intoCartItems.push(el);
-            localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.intoCartItems));
-         }
-       })
+   public setItems(products: T[]): void {
+      // items.forEach((el) => {
+      //    if (Number(e.target.value, products: T[]) === el.nrItem) {
+      //       this.intoCartItems.push(el);
+      //       localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.intoCartItems, products: T[]));
+      //    }
+      //  })
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(products))
    }
 
    public getItems(): T[] {
@@ -42,8 +42,17 @@ export class LocalStorage<T> extends Storages<T> {
       //       shoppingCartSection?.appendChild(div);
       //    }
       // }
-      console.log(itemsArray);
       return itemsArray;
+   }
+
+   public clearItems(): void {
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify([])); 
+   }
+
+   protected init(): void {
+      if (!localStorage.getItem(this.STORAGE_KEY)) {
+         this.clearItems();
+      }
    }
 
 }
