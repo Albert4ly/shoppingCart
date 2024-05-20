@@ -1,25 +1,26 @@
-import { items } from "./itemsList.js";
+// import { items } from "./itemsList.js";
 import { Storages } from "./storages.js";
-const itemsCnt = document.querySelector(".itemsCnt");
-const shoppingCartSection = document.querySelector(".shoppingCartSection");
+// const itemsCnt = document.querySelector(".itemsCnt");
+// const shoppingCartSection = document.querySelector(".shoppingCartSection");
 export class LocalStorage extends Storages {
+    // public intoCartItems: Object[];
     constructor(storageKey) {
         super(storageKey);
-        this.intoCartItems = [];
-        // this.setItems();
+        // this.intoCartItems = [];
         this.getItems();
-        this.listenerFunc();
+        // this.listenerFunc();
     }
-    listenerFunc() {
-        itemsCnt === null || itemsCnt === void 0 ? void 0 : itemsCnt.addEventListener('click', (e) => { this.setItems(e); });
-    }
-    setItems(e) {
-        items.forEach((el) => {
-            if (Number(e.target.value) === el.nrItem) {
-                this.intoCartItems.push(el);
-                localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.intoCartItems));
-            }
-        });
+    // listenerFunc() {
+    //    itemsCnt?.addEventListener('click', (e) => { this.setItems(e) });
+    // } 
+    setItems(products) {
+        // items.forEach((el) => {
+        //    if (Number(e.target.value, products: T[]) === el.nrItem) {
+        //       this.intoCartItems.push(el);
+        //       localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.intoCartItems, products: T[]));
+        //    }
+        //  })
+        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(products));
     }
     getItems() {
         const itemsArray = JSON.parse(localStorage.getItem(this.STORAGE_KEY));
@@ -30,8 +31,14 @@ export class LocalStorage extends Storages {
         //       shoppingCartSection?.appendChild(div);
         //    }
         // }
-        console.log(itemsArray);
         return itemsArray;
-        console.log(itemsArray);
+    }
+    clearItems() {
+        localStorage.setItem(this.STORAGE_KEY, JSON.stringify([]));
+    }
+    init() {
+        if (!localStorage.getItem(this.STORAGE_KEY)) {
+            this.clearItems();
+        }
     }
 }
