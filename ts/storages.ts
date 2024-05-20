@@ -4,12 +4,12 @@ export abstract class Storages<T> {
    public constructor(storageKey: string) {
       this.STORAGE_KEY = storageKey;
 
-      // this.init();
+      this.init();
    }
 
    public abstract getItems(): T[];
    public abstract setItems(items: T[]): void;
    public abstract clearItems(): void;
-   // protected abstract init(): void;
+   protected abstract init(): void;
 
 }
