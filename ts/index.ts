@@ -1,7 +1,8 @@
-import { CreateItems } from "./createItems.js";
+// import { CreateItems } from "./createItems.js";
 // import { LocalStorage } from "./localStorage.js";
 
 import { CartStorage } from "./cartStorage.js";
+import { Router } from "./router/Router.js";
 
 declare global {
    interface Window {
@@ -14,7 +15,7 @@ const redirectFunction = (location: string): void => {
 }
 // const ls = new LocalStorage();
 // ls.getItemsFromLocalStorage();
-new CreateItems();
+// new CreateItems();
 // new LocalStorage();
 
 const tshirtBtn = document.querySelector('.category__tshirtsBtn');
@@ -31,6 +32,10 @@ if (hoodieBtn) {
 }
 
 const storage = new CartStorage();
+const router = new Router();
+
+router.addRoute({ name: 'tshirts', renderFunc: () => console.log('route od tshirtu') });
+router.addRoute({ name: 'hoodies', renderFunc: () => console.log('route od hoodies') });
 
 window.cart = storage;
 
