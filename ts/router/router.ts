@@ -21,7 +21,7 @@ export class Router {
       this.routes.push({ ... route, path });
    };
 
-   private readonly changeRoute = () : void=> {
+   private readonly changeRoute = () :  void => {
       const newLocation = window.location.hash;
       
       if (this.previousHash === newLocation) {

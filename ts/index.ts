@@ -34,8 +34,8 @@ if (hoodieBtn) {
 const storage = new CartStorage();
 const router = new Router();
 
-router.addRoute({ name: 'tshirts', renderFunc: () => console.log('route od tshirtu') });
-router.addRoute({ name: 'hoodies', renderFunc: () => console.log('route od hoodies') });
+// router.addRoute({ name: 'tshirts', renderFunc: () => console.log('route od tshirtu') });
+// router.addRoute({ name: 'hoodies', renderFunc: () => console.log('route od hoodies') });
 
 window.cart = storage;
 
