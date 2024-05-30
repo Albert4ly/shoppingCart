@@ -5,3 +5,4 @@ export type Product = {
    price: number;
 }
 
+// export default Product;

@@ -3,11 +3,13 @@ import { Router } from "../router/router.js";
 import { Cart } from "../cart/cart.js";
 
 export abstract class ProductPage<T extends Product> {
-
-   protected readonly abstract productTemplate: (product: T) => HTMLElement;
-   protected abstract readonly products: T[] = [];
    
    private readonly rootElement!: HTMLDivElement;
+
+   protected readonly abstract productTemplate: (product: T) => HTMLElement;
+   protected  readonly products: T[] = [];
+   
+
 
    public constructor(
       containerId: string,
@@ -17,7 +19,7 @@ export abstract class ProductPage<T extends Product> {
    ) {
       const containerElement = document.getElementById(containerId);
 
-      if (!containerId) {
+      if (!containerId) { 
          return;
       }
 
@@ -28,7 +30,9 @@ export abstract class ProductPage<T extends Product> {
    public render = (): void => {
       while (this.rootElement.firstChild) {
          this.rootElement.firstChild.remove();
-      }
+      } 
+        
+      
       const productBoxes = this.products.map(this.productTemplate);
       productBoxes.forEach(product => this.rootElement.appendChild(product));
    };

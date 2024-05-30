@@ -2,6 +2,7 @@ export class ProductPage {
     constructor(containerId, listingName, router, cart) {
         this.router = router;
         this.cart = cart;
+        this.products = [];
         this.render = () => {
             while (this.rootElement.firstChild) {
                 this.rootElement.firstChild.remove();
